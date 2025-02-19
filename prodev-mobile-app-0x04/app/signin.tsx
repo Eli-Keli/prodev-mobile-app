@@ -2,30 +2,30 @@ import { Text, TextInput, View, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import { styles } from "@/styles/_joinstyle";
-import { HEROLOGO } from "@/constants";
+import { GOOGLELOGO, HEROLOGO } from "@/constants";
 
 export default function Sign() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
-        <View style={styles.iconsection}>
+        <View style={styles.navGroup}>
           <Ionicons name="arrow-back" size={25} />
           <Image source={HEROLOGO} />
         </View>
-        <Text style={styles.titleText}>Sign in to your</Text>
-        <Text style={styles.titleText}>Account</Text>
-        <Text style={styles.subText}>
+        <Text style={styles.largeText}>Sign in to your</Text>
+        <Text style={styles.largeText}>Account</Text>
+        <Text style={styles.smallText}>
           Enter your email and password to sign in.
         </Text>
 
         <View style={styles.formGroup}>
           <View>
-            <Text style={styles.formLabel}>Email</Text>
-            <TextInput keyboardType="email-address" style={styles.formControl} />
+            <Text style={styles.placeholderText}>Email</Text>
+            <TextInput keyboardType="email-address" style={styles.inputField} />
           </View>
           <View style={{ marginTop: 20 }}>
-            <Text style={styles.formLabel}>Password</Text>
-            <View style={styles.formPasswordControl}>
+            <Text style={styles.placeholderText}>Password</Text>
+            <View style={styles.passwordGroup}>
               <TextInput style={{ flex: 1 }} />
               <FontAwesome name="eye-slash" size={24} color="#7E7B7B" />
             </View>
@@ -33,7 +33,7 @@ export default function Sign() {
           <Text style={styles.forgotPasswordText}>Forgot password?</Text>
         </View>
 
-        <TouchableOpacity style={styles.primaryButton}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Sign in</Text>
         </TouchableOpacity>
 
@@ -60,7 +60,7 @@ export default function Sign() {
                 gap: 5,
               }}
             >
-              <Image source={require("@/assets/images/google.png")} />
+              <Image source={GOOGLELOGO} />
               <Text style={styles.socialMediaButtonText}>
                 Continue with Google
               </Text>
@@ -75,7 +75,7 @@ export default function Sign() {
                 gap: 5,
               }}
             >
-              <Image source={require("@/assets/images/facebook.png")} />
+              <Image source={GOOGLELOGO} />
               <Text style={styles.socialMediaButtonText}>
                 Continue with Facebook
               </Text>
